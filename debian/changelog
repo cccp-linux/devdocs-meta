@@ -1,3 +1,13 @@
+devdocs-meta (1.2) unstable; urgency=medium
+
+  * devdocs.lua: simplify
+  * README.md: add standard blurb
+  * d/control: update and fix
+  * d/copyright: update
+  * d/rules: tweak
+
+ -- Dimitry Ishenko <dimitry.ishenko@gmail.com>  Mon, 29 Jun 2026 23:44:59 -0400
+
 devdocs-meta (1.1) unstable; urgency=medium
 
   * devdocs.lua: fix
