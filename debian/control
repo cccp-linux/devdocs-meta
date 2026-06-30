@@ -6,6 +6,8 @@ Build-Depends:
  debhelper-compat (= 13),
 Standards-Version: 4.6.2
 Rules-Requires-Root: no
+Vcs-Browser: https://github.com/cccp-linux/devdocs-meta
+Vcs-Git: https://github.com/cccp-linux/devdocs-meta.git
 
 Package: devdocs-meta
 Architecture: all
@@ -24,5 +26,4 @@ Recommends:
  devdocs-data-opengl,
  devdocs-data-python,
  devdocs-data-qt,
-Description: dev-meta
- Devdocs meta-package
+Description: Devdocs meta-package
