@@ -1,1 +1,1 @@
-devdocs.lua etc/skel/.config/nvim/plugin
+lua usr/share/devdocs-meta

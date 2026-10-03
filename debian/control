@@ -4,6 +4,7 @@ Section: metapackages
 Maintainer: Dimitry Ishenko <dimitry.ishenko@gmail.com>
 Build-Depends:
  debhelper-compat (= 13),
+ dh-vim-addon,
 Standards-Version: 4.6.2
 Rules-Requires-Root: no
 Vcs-Browser: https://github.com/cccp-linux/devdocs-meta
@@ -12,6 +13,8 @@ Vcs-Git: https://github.com/cccp-linux/devdocs-meta.git
 Package: devdocs-meta
 Architecture: all
 Depends:
+ ${misc:Depends},
+ ${vim-addon:Depends},
  devdocs,
 Recommends:
  devdocs-data-bash,
