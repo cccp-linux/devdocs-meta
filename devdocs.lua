@@ -1,20 +1,21 @@
-function CppWord()
-   local isk = vim.opt.iskeyword
-   vim.opt.iskeyword:append(":")
-   local cppword = vim.fn.expand("<cword>")
-   vim.opt.iskeyword = isk
-   return cppword
+local function cpp_word()
+    local isk = vim.bo.iskeyword
+    vim.bo.iskeyword = isk .. ",:"
+    local word = vim.fn.expand("<cword>")
+    vim.bo.iskeyword = isk
+    return (word:gsub("^::", ""):gsub(":+$", ""))
 end
 
-vim.api.nvim_create_user_command("DevGrep", function(opts)
-   local command = vim.list_extend({ "x-terminal-emulator", "-e", "devgrep" }, opts.fargs)
-   vim.fn.jobstart(command)
-end, { nargs = "*" })
+local function devgrep(args)
+    vim.fn.jobstart({ "x-terminal-emulator", "-e", "devgrep", unpack(args) })
+end
+
+vim.api.nvim_create_user_command("DevGrep",
+    function(opts) devgrep(opts.fargs) end, { nargs = "*" }
+)
 
 if type(create_alias) == "function" then
-   create_alias("devgrep", "DevGrep")
+    create_alias("dg", "DevGrep")
 end
 
-vim.keymap.set("n", "<leader>k",
-    function() vim.cmd("DevGrep " .. CppWord()) end, { noremap = true }
-)
+vim.keymap.set("n", "<leader>k", function() devgrep({ cpp_word() }) end)
