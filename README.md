@@ -1,6 +1,10 @@
 # Devdocs meta-package
 
-_TODO_
+Add the following to your `.config/nvim/init.lua`:
+
+```lua
+require("devdocs")
+```
 
 ## Authors
 

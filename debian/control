@@ -30,3 +30,5 @@ Recommends:
  devdocs-data-python,
  devdocs-data-qt,
 Description: Devdocs meta-package
+ Add the following to your .config/nvim/init.lua:
+ * require("devdocs")
